@@ -1,12 +1,20 @@
-# tigopesa
+# tigopesasdk
 TigoPesa API wrapper written in python
 
+## installation
 
-## HOWTO
+```bash
+
+pip install tigopesasdk
+
+```
+
+
+## usage
 
 ```python
 
-from src import tigosdk as tigo
+from src import tigopesasdk as tigo
 
 # stating the configurations
 config = tigo.Config(
@@ -59,3 +67,6 @@ if bill_response is not None:
     print("response description " + bill_response.response_description)
     print("reference id " + bill_response.reference_id)
 ```
+
+## LICENCE
+MIT License

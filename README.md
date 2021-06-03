@@ -6,7 +6,7 @@ TigoPesa API wrapper written in python
 
 ```python
 
-from src import tigopesa as tigo
+from src import tigosdk as tigo
 
 # stating the configurations
 config = tigo.Config(

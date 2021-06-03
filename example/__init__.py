@@ -1,4 +1,4 @@
-import tigopesa as tigo
+import tigosdk as tigo
 
 # stating the configurations
 config = tigo.Config(

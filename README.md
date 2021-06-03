@@ -1,6 +1,10 @@
 # tigopesasdk
 TigoPesa API wrapper written in python
 
+
+## status
+This library supports only push pay API at the moment
+
 ## installation
 
 ```bash
@@ -14,7 +18,7 @@ pip install tigopesasdk
 
 ```python
 
-from src import tigopesasdk as tigo
+import tigopesasdk as tigo
 
 # stating the configurations
 config = tigo.Config(
@@ -29,9 +33,28 @@ config = tigo.Config(
     account_msisdn=""
 )
 
+
+# create a callback handler
+class CustomCallbackHandler(tigo.CallbackHandler):
+    def __init__(self):
+        pass
+
+    def respond(self, request: tigo.CallbackRequest) -> tigo.CallbackResponse:
+        response = tigo.CallbackResponse(
+            response_code="",
+            reference_id="",
+            response_status=True,
+            response_description="",
+        )
+        return response
+
+
+callback_handler = CustomCallbackHandler()
+
 # creating a tigo client
 client = tigo.TigoClient(
     config,
+    callback_handler,
     True
 )
 

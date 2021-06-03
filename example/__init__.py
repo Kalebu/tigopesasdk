@@ -39,11 +39,26 @@ config = tigo.Config(
 
 
 # create a callback handler
+class CustomCallbackHandler(tigo.CallbackHandler):
+    def __init__(self):
+        pass
 
+    def respond(self, request: tigo.CallbackRequest) -> tigo.CallbackResponse:
+        response = tigo.CallbackResponse(
+            response_code="",
+            reference_id="",
+            response_status=True,
+            response_description="",
+        )
+        return response
+
+
+callback_handler = CustomCallbackHandler()
 
 # creating a tigo client
 client = tigo.TigoClient(
     config,
+    callback_handler,
     True
 )
 

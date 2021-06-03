@@ -63,7 +63,7 @@ bill_request = tigo.BillPayRequest(
     reference_id="PYWWTWTW15151718191",
     amount=10000,
     remarks="mt first ever payment from command line tool",
-    customer_msisdn="0712915799",
+    customer_msisdn="0712XXXXXX",
 )
 
 # generate token from tigo
